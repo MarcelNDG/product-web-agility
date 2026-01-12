@@ -1,0 +1,753 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a:visited{
+    color: #fff;
+}
+
+:root {
+    --activeNav-color: rgba(0,0,0,0.6);
+    --transition-speed: 0.3s;
+}
+
+body{  
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    box-sizing: border-box;
+    font-family: "Montserrat Alternates";
+    background-image:url("img/wall.png"); 
+    background-position: -100vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    flex-direction: column;
+    position: relative;
+    background-size: cover;
+    
+}
+
+
+
+/** Nav **/
+nav{    
+    display: flex;
+    height: 11vh;
+    width: 84vw;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 100;    
+    font-family: 'Roboto';
+    transition: var(--transition-speed);
+}
+/** Nav sticky **/
+
+.sticky{
+    top: 0;
+    z-index: 99;
+    width: 84%;
+    height: 6vh;
+    background-color: var(--activeNav-color);
+    position: fixed;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #fff;
+    
+}
+
+nav a {
+
+    text-decoration: none;
+    color: #fff;
+
+}
+
+nav .logo span{
+    font-family: 'Montserrat Alternates';
+    margin-left: 10px;
+    font-size: 1.8rem;
+}
+
+nav ul{
+   display: none;
+   margin: 0;
+   width: 52vw;
+   font-weight: 500;
+   font-size: 1.2rem;
+   align-items: center;
+   text-align: center;
+   justify-content: space-between;   
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a {    
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    
+}
+
+.hmbg{
+    
+    width: 2.6rem;
+    margin-left: auto;
+    cursor: pointer;
+    z-index: 20;
+}
+
+/** Menu **/
+.mobileMenu{
+    top: 0;
+    display: flex;
+    height: 100vh;
+    opacity: 0;
+    width: 100%;
+    transform: translateX(-100vw);
+    transition:ease-out 0.2s;    
+    color: #fff;   
+    z-index: 2000;
+    position: fixed;
+    flex-direction: column;
+    background-color: #2b2b2b;
+}
+
+.mobileLinkWrap{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 3rem 0 0 0;
+    height: 100%;
+    max-height: 22rem;
+    transition:ease-out 0.4s;
+    
+}
+
+.active{
+    transform: translateX(0vw);
+    transition:ease-out 0.4s;
+    opacity: 1;
+}
+
+.mobileLinkWrap ul{   
+   
+    margin: 0;
+}
+
+.mobileLinkWrap ul li{
+    margin: 0;
+    width: 13rem;
+    padding:  1.2rem 0rem;
+    font-family: "Roboto";
+    font-weight: 300;
+    font-size: 1.4rem;
+    border-bottom: rgb(98, 97, 97) 1px solid;
+}
+
+.mobileLinkWrap ul li a{
+  width: 100%;
+}
+
+.mobileLinkWrap ul li:nth-child(5){
+    
+    border-bottom: none;
+}
+
+.mobileNav{
+    
+    top:10px;
+    right: 1px;    
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    position: absolute;
+    /* background-color: rgb(84, 84, 84); */
+}
+
+.mobileNav img{
+    padding: 0rem 2rem;
+    height: 2.4rem;
+    width: 2.4rem;    
+    cursor: pointer; 
+}
+
+.mobileBtn{
+    
+    margin-left: auto;
+    cursor: pointer;
+    height: 2.4rem;
+    width: 2.4rem;
+    padding: 6rem 1.6rem 0 1.6rem;
+    cursor: pointer; 
+    
+}
+
+
+/** Main **/
+
+main {
+    height: 90vh;
+    position: relative;
+    display: flex;    
+    align-items: center;
+    justify-content: center; 
+    z-index: 20;  
+}
+
+.shoe{
+    width: 44vw;
+    max-width: 20rem;    
+}
+
+.shoeDesktop{
+    display: none;
+}
+
+.titleContainer{
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    color: #fff;    
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+}
+
+
+
+.titleContainer h1{
+    color: #fff;
+    font-size: 18vw;    
+}
+
+/** Footer **/
+
+footer{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: "Roboto";
+    height: 3.6rem;
+    color: #fff;
+    background-color: #000000;
+}
+
+
+
+/* ----------- FEATURES PAGE ---------------- */
+
+.features{
+    
+    height: 500px;
+    width: 100%;
+    padding: 4rem 0 4rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+    text-align: center;
+    position: relative;
+    background-color: #150111;
+    background-image: url("img/featuresBG.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.titles{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;    
+}
+
+.features h3{
+    color: aqua;
+    font-size: 2rem;
+}
+
+.features h1{
+    color: aqua;
+    font-size: 3rem;
+    font-weight: lighter;
+}
+
+.features p{
+    font-family: 'Roboto';
+    font-size: 1.2rem;
+    margin-top: 6vh;
+    color: #fff;
+    width: 80vw;
+    max-width: 566px;
+}
+.features .titles p{
+    display: none;
+}
+
+.shoeMobile{
+    width: 80vw; 
+    max-width: 20rem;     
+    right: 2vw;
+}
+
+/* ----------- STORES PAGE ---------------- */
+
+.stores{
+
+    width: 100%;
+    height: fit-content;
+    padding: 4rem 0 6rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    background-color: #000000;
+}
+
+.stores h2{
+    color: #fff;
+    font-family: 'Roboto';
+    font-weight:500;
+    font-style: italic;
+    height: 3rem;
+    font-size: 4rem;
+    height: fit-content;
+    margin-bottom: 2rem;
+}
+
+.storeContainer{
+    display: flex;
+    flex-direction: column;   
+    justify-content: space-around;
+    align-items: center;
+    width: 90vw;
+    height: 1100px;
+}
+
+.store{
+    height: 480px;
+    width: 304px;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-family: 'Roboto';
+    background-color: #1a2027;
+    border-radius: 4px;
+}
+
+.storeInfo{
+    width: 96%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+    align-items: center;
+    height: 85px;
+}
+
+.storeInfo p{
+  margin-top: 2px;
+}
+
+
+.store h3{
+    text-align: left;
+    font-size: 40px;
+    font-weight: 400;
+}
+.store p{
+    font-size: 21px;
+    text-align: left;
+}
+.store img{
+    width: 303px;
+    height: 173px;
+}
+.storeData{
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 1.6rem;
+    height: 160px;
+    width: 98%;
+    padding-right: 0.7rem;
+}
+
+.storeData .data p {
+    font-size: 18px;
+}
+
+.data{
+    display: flex;
+    flex-direction: row;
+    align-items: center;   
+    justify-content: center; 
+}
+
+.data img{
+    width: 32px;
+    height: 32px;
+    padding-right: 0.4rem;
+}
+
+/* ----------- Reserve PAGE ---------------- */
+
+.reserve{
+    height: 840px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;    
+    text-align: center;    
+    background-color: #150111;
+    background-image: url("img/reservebg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.reserve h2{
+    font-size: 2.6rem;
+    font-family: 'Roboto';
+    font-style: italic;
+    transform: rotate(-1deg);
+}
+.reserve h3{
+    font-family: 'Roboto';
+    font-style: italic;
+    font-size: 1.8rem;
+    margin-top: 6px;
+    font-weight: 300;
+    transform: rotate(-1deg);
+}
+.reserveBG{
+    background-color: rgb(0,0,0);
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.reserveWrap{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 7rem 0;
+    z-index: 10;
+}
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000000;
+    font-family: "Roboto";
+    width: 90vw;
+    max-width: 60rem;
+    height: 420px;
+    border-radius: 8px;
+}
+
+.formContainer form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;  
+    align-items: center; 
+    height: 264px;
+    font-size: 1.4rem;
+    width: 70%;
+}
+
+.formName{
+text-align: left;
+width: 90%;
+}
+
+form input{
+   height: 2rem;
+   width: 90%;
+   font-size: 1.4rem;
+   padding-left: 0.4rem;
+   border-radius: 0px;
+   color: rgb(152, 152, 152);
+   border: none;
+}
+
+form :nth-child(2) {
+    margin-top: -34px;
+    font-size: 1rem;
+}
+
+form :nth-child(3){
+    margin-top: -24px;
+}
+form :nth-child(4){
+    margin-top: -34px;
+}
+
+.submit{
+    height: 38px;
+    width: 130px;
+    font-size: 1.4rem;
+    border-radius: 8px;
+    background-color: rgb(205, 4, 182);
+    margin-top: -22px;
+    border: none;
+    color: #fff;
+    padding: 0;
+}
+
+.formText{
+    font-size: 1.5rem;
+    margin-top: 1.8rem;
+}
+
+/* ----------- homepage PAGE ---------------- */
+
+.homepage{
+    height: 420px;
+   /* background-image: url("img/homepageBG.png") ; */
+   /* background-repeat: no-repeat; */
+   /* background-position: center; */
+    background-size: cover;
+    background-color: #000000;
+    width: 100%;
+    color: #fff;
+}
+.homepage img{
+    width: 80vw;
+    max-width: 24rem;
+}
+.homepage a {
+    text-decoration: none;
+}
+.homepageWrap{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 90vw;
+    height: 56%;
+}
+.homepage h2{
+    font-size: 3.8rem;
+}
+.homepage h3{
+    font-size: 1.8rem;
+    font-weight: lighter;
+}
+
+
+
+@media only screen and (min-width: 760px) {
+   body{
+        
+       background-position: 0vw;
+   }
+   .hmbg{
+       display: none;
+   }
+   nav{
+      
+   }
+   .mobileMenu{
+       display: none;
+   }
+   nav ul, nav .logo{
+       display: flex;
+   }
+   .shoe{
+    width: 55vw;
+       max-width: 34rem;      
+  } 
+  .titleContainer h3{
+    font-size: 15vw;
+  }
+  .titles{
+    height: auto;
+  }
+
+
+  .features{
+    height: 740px;
+  }
+  
+  .features h3{
+      color: aqua;
+      font-size: 3rem;
+  }
+  .features h1{
+      color: aqua;
+      font-size: 6rem;
+  }
+
+  .features p{
+    width: 70vw;
+  }
+
+  .shoeMobile{
+      display: none;
+  }
+  
+  .shoeDesktop{
+      display: block;
+      width: 70vw;
+      right: 2vw;
+  }
+
+
+.reserve h2{
+    font-size: 4rem;
+}
+.reserve h3{
+    font-size: 2.4rem;
+}
+
+
+.stores{
+  height: 700px;
+}
+
+
+
+.storeWrap{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+    
+}
+
+.storeContainer{
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-around;  
+    height: 100%;
+}
+
+}
+
+  @media only screen and (min-width: 1280px){
+    nav{
+       
+    }
+
+    nav ul{
+       width: 36vw;
+    }
+    .titleContainer h1{
+        font-size: 15rem;
+    }
+
+    .shoe{
+        max-width: 34rem;
+           
+    }
+
+   
+    .features{
+        
+        flex-direction: row;
+        text-align: left;      
+        
+    }
+
+    .features img{
+         margin-left: 10vw;  
+    }
+
+    .features p{
+        flex-direction: row;
+        text-align: left; 
+        display: none;
+    }
+
+    .features .titles p{
+        display: block;
+        width: 32vw;
+    }
+
+    .features h3{
+        color: aqua;
+        font-size: 4rem;
+    }
+    .features h1{
+        color: aqua;
+        font-size: 7rem;
+    }
+
+    .storeContainer{
+        width: 70vw;
+    }
+
+    .storeWrap{
+        max-width: 54vw;
+    }
+
+    .reserve h2{
+    font-size: 4.4rem;
+    }
+
+    .reserve h3{
+        font-size: 2.8rem;
+    }
+}
+
+ @media only screen and (min-width: 1920px){
+    nav{
+        width: 64vw;
+    }
+     nav ul{
+       width: 26vw;
+    }
+
+     .storeWrap{
+        max-width: 40vw;
+    }
+ }
+
